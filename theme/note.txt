@@ -1,0 +1,28 @@
+- Từ theme ShopFashion (thương mại điện tử) được cung cấp yêu cầu:
+- Bóc tách giao diện, xử lý điều hướng trang bằng PHP, sử dụng lại main layout default
+- Import datatbase th đã cung cấp
+- Kết nối CSDL 
+- Hiển thị sản phẩm có trong database ra ngoài trang chủ
+-----------------
+
+
+**** Về phía khách hàng:
+- Xử lý về giỏ hàng:
++ Cho phép khách hàng thêm các sản phẩm muốn mua vào giỏ hàng.
++ Hiển thị các sản phẩm khách hàng mới thêm vào giỏ hàng
++ Có thể cập nhật số lượng mua, xóa sản phẩm khỏi giỏ hàng.
++ Tiến hành đặt hàng
++ Gửi email đơn hàng (SMS)
+
+**** Về phía quản trị viên
++ Xem được đơn hàng khách đặt
++ Xử lý đơn hàng
+
+
+
+** PHP nâng cao sẽ triển khai.
+-- Nâng cao: Sử dụng ajax xử lý phần giỏ hàng
+Xóa sản phẩm khỏi cart:
+- Bắt sự kiện người dùng click vào nút xóa
+- Lấy được id sản phẩm khách hàng cần xóa
+- Sử dụng ajax để thực hiện việc xóa: post, gửi data là id sản phẩm
