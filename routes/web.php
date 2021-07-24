@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Http\Response;
 use App\Models\Category;
 use App\Models\Product;
@@ -17,16 +17,12 @@ use App\Models\Product;
 */
 
 Route::get('/','ProductController@index')->name('/');
-Route::get('Add-Cart/{id}','AjaxController@AddCart');
-Route::get('Del-Item-Cart/{id}','AjaxController@deleteItemCart');
-Route::get('Update-Cart/{id}/{quanty}','AjaxController@UpdateItemCart');
-Route::get('product-list', function () {
-    return view('pages.product.product-list');
-})->name('product-list');
-Route::get('product-detail', function () {
-    return view('pages.product.product-detail');
-})->name('product-detail');
-
+Route::post('Add-Cart/{id}','AjaxController@AddCart');
+Route::post('Del-Item-Cart/{id}','AjaxController@deleteItemCart');
+Route::post('Update-Cart/{id}/{quanty}','AjaxController@UpdateItemCart');
+Route::post('cart','OrderController@store')->name('cart');
+Route::get('product-list','ProductController@listProduct' )->name('product-list');
+Route::get('product-detail/{id}', 'ProductController@productDetail');
 Route::get('cart', function () {
     return view('pages.Order.cart');
 })->name('cart');

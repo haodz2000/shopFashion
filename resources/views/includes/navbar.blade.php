@@ -83,8 +83,8 @@
                 <input type="number">
             </label>
             <span class="separate">
-                    -
-                  </span>
+                -
+            </span>
             <label>
                 $
                 <input type="number">
@@ -224,10 +224,10 @@
             Facebook
         </h3>
         <span class="likebutton">
-                  <a href="#">
-                    <img src="images/fblike.png" alt="">
-                  </a>
-                </span>
+            <a href="#">
+                <img src="/images/fblike.png" alt="">
+            </a>
+        </span>
         <p>
             12k people like Flat Shop.
         </p>
@@ -267,14 +267,14 @@
         </ul>
         <div class="fbplug">
             <a href="#">
-                    <span>
-                      <img src="images/fbicon.png" alt="">
-                    </span>
+                <span>
+                    <img src="/images/fbicon.png" alt="">
+                </span>
                 Facebook social plugin
             </a>
         </div>
     </div>
     <div class="leftbanner">
-        <img src="images/banner-small-01.png" alt="">
+        <img src="/images/banner-small-01.png" alt="">
     </div>
 </div>

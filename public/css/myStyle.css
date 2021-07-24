@@ -11,3 +11,15 @@
     background: black;
     width: 100px;
 }
+#form-checkout .title{
+    margin-left: 15px;
+}
+#checkout label{
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+#checkout span{
+    padding:5px;
+    color: red;
+}

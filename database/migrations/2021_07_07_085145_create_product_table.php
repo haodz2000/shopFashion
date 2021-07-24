@@ -20,7 +20,7 @@ class CreateProductTable extends Migration
             $table->bigIncrements('id')->unsigned();
             $table->bigInteger('category_id')->unsigned();
             $table->string('name');
-            $table->float('price')->default(0);
+            $table->integer('price');
             $table->string('images')->default('#');
             $table->tinyInteger('quantity');
             $table->text('description')->default('Mô tả');

@@ -4,6 +4,16 @@
 <div class="container_fullwidth">
     <div class="container shopping-cart">
         <div class="row" id="data-cart">
+            @if(isset($alertOrderSuccess))
+            <div class="alert alert-success">
+                    {{$alertOrderSuccess}}
+            </div>
+            @endif
+            @if(isset($alertOrderDanger))
+                <div class="alert alert-danger">
+                    {{$alertOrderDanger}}
+                </div>
+            @endif
             <?php
             $newCart = session('Cart');
             ?>
@@ -74,7 +84,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td style="border: none" colspan="6" class="text-danger fa-2x">Giỏ hàng rỗng</td>
+                            <td style="border: none" colspan="6" class=" alert-danger ">Giỏ hàng rỗng</td>
                         </tr>
                     @endif
                     </tbody>
@@ -118,40 +128,46 @@
             </div>
         </div>
         <div class="clearfix">
-            <div id="form-checkout" class="row ">
+            <div id="form-checkout" class="row hidden">
                 <h3 class="title">
                     Checkout
                 </h3>
                 <div class="clearfix">
                 </div>
 
-                <form action="index.php?page=ordered" method="POST" id="checkout">
-                    <div class="col-md-6">
-                        <div class="form-group">
+                <form action="" method="post" onsubmit="return regexFormOrder()" id="checkout">
+                    @csrf
+                    <div class="col-md-6 form-checkout-cover">
+
+                        <div class="form-group ">
                             <label for="name">Name</label>
-                            <input required="" type="text" name="name" class="form-control" id="name" placeholder="Name" />
+                            <span id="error-name"></span>
+                            <input required="" onblur="regexName()" type="text" name="name" class="form-control" id="name" placeholder="Name" />
                         </div>
 
                         <div class="form-group">
                             <label for="phone">Phone</label>
-                            <input required type="number" name="phone" class="form-control" id="phone" placeholder="" />
+                            <span id="error-phone"></span>
+                            <input required type="number" onblur="regexPhone()" name="phone" class="form-control" id="phone" placeholder="phone" />
                         </div>
 
                         <div class="form-group">
-                            <label for="name">Email</label>
-                            <input required type="email" name="email" class="form-control" id="email" placeholder="Email" />
+                            <label for="email">Email</label>
+                            <span id="error-email"></span>
+                            <input required type="email" onblur="regexEmail()" name="email" class="form-control" id="email" placeholder="Email" />
                         </div>
 
                         <div class="form-group">
                             <label for="address">Address</label>
-                            <input required type="text" name="address" class="form-control" id="address" placeholder="Address" />
+                            <span id="error-address"></span>
+                            <input required onblur="regexAddress()" type="text" name="address" class="form-control" id="address" placeholder="Address" />
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="note">Note</label>
-                            <textarea class="form-control" name="note" rows="15" cols="10" placeholder="Note order"></textarea>
+                            <textarea class="form-control" name="note" rows="15" cols="10" placeholder="Note order"> </textarea>
                         </div>
                     </div>
 

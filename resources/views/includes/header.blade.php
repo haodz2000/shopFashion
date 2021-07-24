@@ -4,7 +4,7 @@
         <div class="row">
 
             <div class="col-md-2 col-sm-2">
-                <div class="logo"><a href="index.html"><img src="images/logo.png" alt="FlatShop"></a></div>
+                <div class="logo"><a href="index.html"><img src="/images/logo.png" alt="FlatShop"></a></div>
             </div>
 
             <div class="col-md-10 col-sm-10">
@@ -33,14 +33,14 @@
                                             @if($slug<4)
                                                 <li>
                                                     <div class="cart-item">
-                                                        <div class="image"><img src="images/products/thum/{{$item['productInfo']->images}}" alt=""></div>
+                                                        <div class="image"><img src="/images/products/thum/{{$item['productInfo']->images}}" alt=""></div>
                                                         <div class="item-description">
                                                             <p class="name">{{$item['productInfo']->name}}</p>
                                                             <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">{{$item['quanty']}}</span></p>
                                                         </div>
                                                         <div class="right">
                                                             <p class="price">{{number_format($item['price'])}}đ</p>
-                                                            <button data-id="{{$item['productInfo']->id}}" class="remove"><img src="images/remove.png" alt="remove"></button>
+                                                            <button data-id="{{$item['productInfo']->id}}" class="remove"><img src="/images/remove.png" alt="remove"></button>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -52,7 +52,7 @@
                                         @endif
 
                                         <li>
-                                            <span class="total">Total <strong>{{number_format($newCart->totalPrice)}} VND</strong></span><button class="checkout" onClick="location.href='checkout.html'">CheckOut</button>
+                                            <span class="total">Total <strong>{{number_format($newCart->totalPrice)}} VND</strong></span><button class="checkout" onClick="location.href='{{route('cart')}}'">CheckOut</button>
                                         </li>
                                     </ul>
                                 @endif

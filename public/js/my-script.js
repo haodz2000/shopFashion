@@ -14,7 +14,7 @@ function changeCart(data){
         {
             dataCart += ' <li>' +
                 '<div class="cart-item">' +
-                '<div class="image"><img src="images/products/thum/'+val.productInfo.images+'"></div>' +
+                '<div class="image"><img src="/images/products/thum/'+val.productInfo.images+'"></div>' +
                 '<div class="item-description">' +
                 '<p class="name">'+val.productInfo.name+'</p>' +
                 '<p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">'+val.quanty+'</span></p>' +
@@ -42,8 +42,8 @@ jQuery(document).on('click','button.add-cart',function (e)
     e.preventDefault();
     var id = jQuery(this).data('id');
     jQuery.ajax({
-        type: "GET",
-        url: 'Add-Cart/'+id,
+        type: "post",
+        url: '/Add-Cart/'+id,
         dataType: 'json',
         success: function (data) {
             var dataCart = changeCart(data);
@@ -64,7 +64,7 @@ jQuery(document).on('click','button.remove',function (e){
     e.preventDefault();
     var id = jQuery(this).data('id');
     jQuery.ajax({
-        type: 'GET',
+        type: 'post',
         url:'Del-Item-Cart/'+id,
         dataType: 'json',
         success:function (data){
@@ -89,7 +89,7 @@ jQuery(document).on('blur','input.quanty',function (e){
     if( newQuanty >0)
     {
         jQuery.ajax({
-            type: 'GET',
+            type: 'post',
             url: 'Update-Cart/'+id+'/'+newQuanty,
             success:function (data){
                 if(data != 0)
@@ -113,5 +113,92 @@ jQuery(document).on('blur','input.quanty',function (e){
 
 /* End Ajax Cart*/
 /* Regex Form Check Out*/
+jQuery(document).on('click','button.process-Checkout',function (){
+    jQuery("#form-checkout").removeClass('hidden');
+})
+function regexPhone(){
+    const regexPhone = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
+    var phone = jQuery("#phone").val().trim();
+    if(phone != '')
+    {
+        if(!regexPhone.test(phone))
+        {
+            jQuery("span#error-phone").html('Số điện thoại không hợp lệ');
+            jQuery("#phone").focus();
+        }
+        else {
+            jQuery("span#error-phone").empty();
+            return true;
+        }
+    }
+    else{
+        jQuery("span#error-phone").html('Không để trống số điện thoại');
+        jQuery("#phone").focus();
+    }
+}
+function regexEmail(){
+    const regexEmail =/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var email = jQuery("#email").val().trim();
+    if(email != '')
+    {
+        if(!regexEmail.test(email))
+        {
+            jQuery("span#error-email").html('Email không hợp lệ');
+            jQuery("#email").focus();
+        }
+        else{
+            jQuery("span#error-email").empty();
+            return true;
+        }
+    }
+    else{
+        jQuery("span#error-email").html('Không để trống Email');
+        jQuery("#email").focus();
+    }
+}
+function regexName(){
+    const regexName = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*/g;
+    var name = jQuery("#name").val().trim();
+    if(name != '')
+    {
+        if(!regexName.test(name))
+        {
+            jQuery("span#error-name").html('Tên không hợp lệ');
+            jQuery("#name").focus();
+        }
+        else{
+            jQuery("span#error-name").empty();
+            return true;
+        }
+    }
+    else{
+        jQuery("span#error-name").html('Không để trống tên');
+        jQuery("#name").focus();
+    }
+}
+function regexAddress()
+{
+    var address = jQuery("#address").val().trim();
+    if(address == null||address =='' )
+    {
+        jQuery("#error-address").html("Bạn chưa nhập địa chỉ");
+        return false;
+    }
+    else {
+        jQuery("#error-address").empty();
+        return true;
+    }
+}
+function regexFormOrder()
+{
+    if(regexName()&&regexPhone()&&regexEmail()&&regexAddress())
+    {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 /* End Regex Form Check Out*/
 

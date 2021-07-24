@@ -19,7 +19,7 @@ class CreateCustomersTable extends Migration
             $table->collation = 'utf8mb4_unicode_ci';
             $table->bigIncrements('id')->unsigned();
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('phone',15);
             $table->string('address');
             $table->dateTime('created_at')->useCurrent();

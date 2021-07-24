@@ -6,27 +6,27 @@
             <ul class="brand_item">
                 <li>
                     <a href="#">
-                        <div class="brand-logo"><img src="images/envato.png" alt=""></div>
+                        <div class="brand-logo"><img src="/images/envato.png" alt=""></div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <div class="brand-logo"><img src="images/themeforest.png" alt=""></div>
+                        <div class="brand-logo"><img src="/images/themeforest.png" alt=""></div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <div class="brand-logo"><img src="images/photodune.png" alt=""></div>
+                        <div class="brand-logo"><img src="/images/photodune.png" alt=""></div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <div class="brand-logo"><img src="images/activeden.png" alt=""></div>
+                        <div class="brand-logo"><img src="/images/activeden.png" alt=""></div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <div class="brand-logo"><img src="images/envato.png" alt=""></div>
+                        <div class="brand-logo"><img src="/images/envato.png" alt=""></div>
                     </a>
                 </li>
             </ul>
@@ -35,27 +35,27 @@
             <ul class="brand_item">
                 <li>
                     <a href="#">
-                        <div class="brand-logo"><img src="images/envato.png" alt=""></div>
+                        <div class="brand-logo"><img src="/images/envato.png" alt=""></div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <div class="brand-logo"><img src="images/themeforest.png" alt=""></div>
+                        <div class="brand-logo"><img src="/images/themeforest.png" alt=""></div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <div class="brand-logo"><img src="images/photodune.png" alt=""></div>
+                        <div class="brand-logo"><img src="/images/photodune.png" alt=""></div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <div class="brand-logo"><img src="images/activeden.png" alt=""></div>
+                        <div class="brand-logo"><img src="/images/activeden.png" alt=""></div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <div class="brand-logo"><img src="images/envato.png" alt=""></div>
+                        <div class="brand-logo"><img src="/images/envato.png" alt=""></div>
                     </a>
                 </li>
             </ul>
