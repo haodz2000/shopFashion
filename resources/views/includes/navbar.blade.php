@@ -5,12 +5,12 @@
         </h3>
         <ul>
             <li>
-                <a href="{{route('product-list')}}">
+                <a href="{{route('products')}}">
                     Men
                 </a>
             </li>
             <li>
-                <a href="{{route('product-list')}}">
+                <a href="{{route('products')}}">
                     Women
                 </a>
             </li>

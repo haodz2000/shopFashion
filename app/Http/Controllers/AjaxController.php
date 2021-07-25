@@ -61,8 +61,5 @@ class AjaxController extends Controller
 }
 
 /* End Ajax Cart*/
-/* Regex Form Check Out*/
-
-/* End Regex Form Check Out*/
 
 

@@ -1,4 +1,7 @@
 @extends('index');
+@section('title')
+    ShopFashion-Home
+@endsection
 @section('content')
 @include('includes/slide');
 <div class="clearfix"></div>
@@ -28,7 +31,7 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="products">
                                 <div class="offer">- %20</div>
-                                <div class="thumbnail"><a href="product-detail/{{$pro[$i*4 + $product]->id}}"><img
+                                <div class="thumbnail"><a href="products/{{$pro[$i*4 + $product]->id}}"><img
                                             src="/images/products/small/{{$pro[$i*4 + $product]->images}}"
                                             alt="Product Name"></a></div>
                                 <div class="productname">{{$pro[$i*4 + $product]->name}}</div>
@@ -75,9 +78,8 @@
                                         ?>
                         <div class="col-md-3 col-sm-6">
                             <div class="products">
-                                <div class="thumbnail"><a href="product-detail/{{$pro[$i*4 + $product]->id}}"><img
-                                            src="/images/products/small/{{$pro[$i*4 + $product]->images}}"
-                                            alt="Product Name"></a></div>
+                                <div class="thumbnail"><a href="products/{{$pro[$i*4 + $product]->id}}">
+                                    <img src="/images/products/small/{{$pro[$i*4 + $product]->images}}" alt="Product Name"></a></div>
                                 <div class="productname">{{$pro[$i*4 + $product]->name}}</div>
                                 <h4 class="price">{{$pro[$i*4 + $product]->price}}</h4>
                                 <div class="button_group">
@@ -105,3 +107,6 @@
             </ul>
         </div>
         @endsection
+@section('js_by_page')
+            <script type="text/javascript" src="{{asset('/js/my-script.js')}}"></script>
+@endsection

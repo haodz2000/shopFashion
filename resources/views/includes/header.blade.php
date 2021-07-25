@@ -4,7 +4,7 @@
         <div class="row">
 
             <div class="col-md-2 col-sm-2">
-                <div class="logo"><a href="index.html"><img src="/images/logo.png" alt="FlatShop"></a></div>
+                <div class="logo"><a href="index.html"><img src="{{asset('/images/logo.png')}}" alt="FlatShop"></a></div>
             </div>
 
             <div class="col-md-10 col-sm-10">
@@ -66,8 +66,8 @@
                             <li class="active">
                                 <a href="{{route('/')}}" class="" data-toggle="">Home</a>
                             </li>
-                            <li><a href="{{route('product-list')}}">men</a></li>
-                            <li><a href="{{route('product-list')}}">women</a></li>
+                            <li><a href="{{route('products')}}">men</a></li>
+                            <li><a href="{{route('products')}}">women</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fashion</a>
 {{--                                <div class="dropdown-menu mega-menu">--}}

@@ -1,4 +1,7 @@
 @extends('index');
+@section('title')
+    ShopFashion-Cart
+@endsection
 @section('content');
 
 <div class="container_fullwidth">
@@ -174,4 +177,7 @@
                     <button type="submit" name="submit-order" class="btn btn-danger pull-right">Checkout</button>
                 </form>
             </div>
+@endsection
+            @section('js_by_page')
+                <script type="text/javascript" src="{{asset('/js/my-script.js')}}"></script>
 @endsection

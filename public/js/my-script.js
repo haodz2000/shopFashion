@@ -4,7 +4,7 @@ jQuery.ajaxSetup({
     }
 });
 function changeCart(data){
-    var dataCart = '<a href="cart" class="cart-icon">cart <span class="cart_no">'+data.totalQuanty+'</span></a>\n' +
+    var dataCart = '<a href="/cart" class="cart-icon">cart <span class="cart_no">'+data.totalQuanty+'</span></a>\n' +
         '    <ul  class="option-cart-item width-cart">';
     var slug = 0;
     jQuery.each(data.products, function (index,val)
@@ -21,17 +21,17 @@ function changeCart(data){
                 '</div>' +
                 '<div class="right">' +
                 '<p class="price">'+ Intl.NumberFormat('vi', {style : 'currency', currency : 'VND'}).format(val.price) +'</p>' +
-                '<button data-id="'+val.productInfo.id+'" class="remove"><img src="images/remove.png" alt="remove"></button>' +
+                '<button data-id="'+val.productInfo.id+'" class="remove"><img src="/images/remove.png" alt="remove"></button>' +
                 '</div>' +
                 '</div>' +
                 '</li>';
         }
     })
     if(slug >=4){
-        dataCart +='<a href="cart" class="remove">>>Xem thêm</a>';
+        dataCart +='<a href="/cart" class="remove">>>Xem thêm</a>';
     }
     dataCart +='  <li>' +
-        '            <span class="total">Total <strong>'+Intl.NumberFormat('vi', {style : 'currency', currency : 'VND'}).format(data.totalPrice) +'</strong></span><button class="checkout" onClick="location.href=\'checkout.html\'">CheckOut</button>\n' +
+        '            <span class="total">Total <strong>'+Intl.NumberFormat('vi', {style : 'currency', currency : 'VND'}).format(data.totalPrice) +'</strong></span><button class="checkout" onClick="location.href=\'/cart\'">CheckOut</button>\n' +
         '        </li>' +
         '    </ul>'
     return dataCart;
@@ -50,7 +50,7 @@ jQuery(document).on('click','button.add-cart',function (e)
             jQuery("#cart-item").empty();
             jQuery("#cart-item").html(dataCart);
             var html = '<p>Đã thêm vào giỏ hàng</p>' +
-                "<a class='white-bg width-slug' href='cart'>Vào giỏ hàng</a>";
+                "<a class='white-bg width-slug' href='/cart'>Vào giỏ hàng</a>";
             alertify.success(html);
         },
         error: function () {

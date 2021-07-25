@@ -1,4 +1,7 @@
 @extends('index');
+@section('title')
+    ShopFashion
+@endsection
 @section('content')
 @include('includes/slide');
 <div class="container_fullwidth">
@@ -136,3 +139,6 @@
             </div>
         </div>
         @endsection
+        @section('js_by_page')
+            <script type="text/javascript" src="{{asset('/js/my-script.js')}}"></script>
+@endsection

@@ -1,4 +1,11 @@
 @extends('index');
+@section('title')
+    ShopFashion
+@endsection
+@section('facebookComment')
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0" nonce="J9CJ73M5"></script>
+@endsection
 @section('content')
     @if(isset($product)&&isset($hotProduct))
 <div class="container_fullwidth">
@@ -100,221 +107,29 @@
                     <div id="tabnav">
                         <ul>
                             <li>
-                                <a href="#Descraption">
+                                <a  id="tagDescription">
                                     DESCRIPTION
                                 </a>
                             </li>
                             <li>
-                                <a href="#Reviews">
+                                <a  id="tagReview">
                                     REVIEW
                                 </a>
                             </li>
                             <li>
-                                <a href="#tags">
+                                <a class="" href="#tags">
                                     PRODUCT TAGS
                                 </a>
                             </li>
                         </ul>
                     </div>
+
                     <div class="tab-content-wrap">
-                        <div class="tab-content" id="Descraption">
-                            <p>
-                                Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultri ces posuere cubilia curae Aenean eleifend laoreet congue. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibu um ante ipsum primis in faucibus orci luctus et ultri ces posuere cubilia curae Aenean eleifend laoreet congue. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultri ces posuere cubilia curae Aenean eleifend laoreet congue. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultri ces posuere cubilia curae...
-                            </p>
-                            <p>
-                                Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultri ces posuere cubilia curae Aenean eleifend laoreet congue. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibu um ante ipsum primis in faucibus orci luctus et ultri ces posuere cubilia curae Aenean eleifend laoreet congue. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc...
-                            </p>
+                        <div class="styleTag" id="description">
+                            {{$product->description}}
                         </div>
-                        <div class="tab-content" id="Reviews">
-                            <form>
-                                <table>
-                                    <thead>
-                                    <tr>
-                                        <th>
-                                            &nbsp;
-                                        </th>
-                                        <th>
-                                            1 star
-                                        </th>
-                                        <th>
-                                            2 stars
-                                        </th>
-                                        <th>
-                                            3 stars
-                                        </th>
-                                        <th>
-                                            4 stars
-                                        </th>
-                                        <th>
-                                            5 stars
-                                        </th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            Quality
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="quality" value="Blue"/>
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="quality" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="quality" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="quality" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="quality" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Price
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="price" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="price" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="price" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="price" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="price" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Value
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="value" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="value" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="value" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="value" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="value" value="">
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="form-row">
-                                            <label class="lebel-abs">
-                                                Your Name
-                                                <strong class="red">
-                                                    *
-                                                </strong>
-                                            </label>
-                                            <input type="text" name="" class="input namefild">
-                                        </div>
-                                        <div class="form-row">
-                                            <label class="lebel-abs">
-                                                Your Email
-                                                <strong class="red">
-                                                    *
-                                                </strong>
-                                            </label>
-                                            <input type="email" name="" class="input emailfild">
-                                        </div>
-                                        <div class="form-row">
-                                            <label class="lebel-abs">
-                                                Summary of You Review
-                                                <strong class="red">
-                                                    *
-                                                </strong>
-                                            </label>
-                                            <input type="text" name="" class="input summeryfild">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="form-row">
-                                            <label class="lebel-abs">
-                                                Your Name
-                                                <strong class="red">
-                                                    *
-                                                </strong>
-                                            </label>
-                                            <textarea class="input textareafild" name="" rows="7" >
-                            </textarea>
-                                        </div>
-                                        <div class="form-row">
-                                            <input type="submit" value="Submit" class="button">
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="tab-content" >
-                            <div class="review">
-                                <p class="rating">
-                                    <i class="fa fa-star light-red">
-                                    </i>
-                                    <i class="fa fa-star light-red">
-                                    </i>
-                                    <i class="fa fa-star light-red">
-                                    </i>
-                                    <i class="fa fa-star-half-o gray">
-                                    </i>
-                                    <i class="fa fa-star-o gray">
-                                    </i>
-                                </p>
-                                <h5 class="reviewer">
-                                    Reviewer name
-                                </h5>
-                                <p class="review-date">
-                                    Date: 01-01-2014
-                                </p>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a eros neque. In sapien est, malesuada non interdum id, cursus vel neque.
-                                </p>
-                            </div>
-                            <div class="review">
-                                <p class="rating">
-                                    <i class="fa fa-star light-red">
-                                    </i>
-                                    <i class="fa fa-star light-red">
-                                    </i>
-                                    <i class="fa fa-star light-red">
-                                    </i>
-                                    <i class="fa fa-star-half-o gray">
-                                    </i>
-                                    <i class="fa fa-star-o gray">
-                                    </i>
-                                </p>
-                                <h5 class="reviewer">
-                                    Reviewer name
-                                </h5>
-                                <p class="review-date">
-                                    Date: 01-01-2014
-                                </p>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a eros neque. In sapien est, malesuada non interdum id, cursus vel neque.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="tab-content" id="tags">
-                            <div class="tag">
-                                Add Tags :
-                                <input type="text" name="">
-                                <input type="submit" value="Tag">
-                            </div>
+                        <div class="styleTag"  style="display: none" id="review">
+                            <div class="fb-comments" data-href="https://localhost:8000/products/{{$product->id}}" data-width="" data-numposts="5"></div>
                         </div>
                     </div>
                 </div>
@@ -567,4 +382,20 @@
             </div>
         </div>
     @endif
+@endsection
+        @section('js_by_page')
+            <script type="text/javascript" src="{{asset('/js/my-script.js')}}"></script>
+            <script type="text/javascript">
+                    jQuery(' #tagDescription').click(function ()
+                    {
+                        jQuery(this).addClass('active');
+                        jQuery("#description").css('display','block');
+                        jQuery("#review").css('display','none');
+                    })
+                    jQuery('#tabnav #tagReview').click(function ()
+                    {
+                        jQuery("#description").css('display','none');
+                        jQuery("#review").css('display','block');
+                    })
+            </script>
 @endsection
